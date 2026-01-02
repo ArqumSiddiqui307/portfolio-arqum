@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from 192.168.18.209:8088/portfolio by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 02 Jan 2026 07:11:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arqum | Portfolio</title>
+  <script src="../code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../cdn.jsdelivr.net/npm/%40popperjs/core%402.11.6/dist/umd/popper.min.js"></script>
+  <script src="../cdn.jsdelivr.net/npm/bootstrap%405.3.3/dist/js/bootstrap.min.js"></script>
+  
+  <link href="../cdn.jsdelivr.net/npm/bootstrap%405.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&amp;display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #0a0a0a;
+      --text-light: #e6e6e6;
+      --accent: #b8ff48;
+      --muted: #999;
+      --card-bg: #161616;
+    }
+
+    /* ✅ NEW: Set base font size on HTML for better scaling */
+    html {
+        font-size: 100%; /* Base 16px */
+    }
+
+    body {
+      /* ✅ UPDATED: Poppins to Lato */
+      background: var(--bg-dark);
+      color: var(--text-light);
+      font-family: 'Lato', sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* HEADER (STICKY) */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      text-align: center;
+      padding: 18px 0;
+    }
+
+    header ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    header ul li {
+      display: inline-block;
+      margin: 0 18px;
+    }
+
+    header ul li a {
+      color: var(--muted);
+      font-weight: 500;
+      transition: 0.3s;
+      font-size: 0.95rem;
+    }
+
+    header ul li a:hover {
+      color: var(--accent);
+    }
+    
+    /* --- NEW ACTIVE LINK STYLE --- */
+    header ul li a.active {
+      color: var(--accent); /* Highlight with the green accent color */
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 3px;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9)), 
+                  url('images/Arqum.png') center/contain no-repeat;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-color: #0f0f0f;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      padding: 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .btn-custom {
+      background: var(--accent);
+      color: #000;
+      border-radius: 50px;
+      padding: 10px 26px;
+      font-weight: 400;
+      transition: 0.3s;
+    }
+
+    .btn-custom:hover {
+      /* background: #d9ff80; */
+      background: #ffffff;
+      color: #000;
+      transform: translateY(-2px);
+    }
+
+    /* INFO SECTION */
+    .info-section {
+      max-width: 1100px;
+      margin: 80px auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      padding: 0 20px;
+    }
+
+    .info-column {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .info-box {
+      background: var(--card-bg);
+      padding: 18px 24px;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .info-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .info-box h5 {
+      color: var(--accent);
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+
+    .info-box p {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 50px 0 25px;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid #222;
+    }
+
+    footer a {
+      color: var(--accent);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero {
+        height: 60vh;
+        background-size: cover;
+      }
+
+      .info-section {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="skill.html">Skills</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+    </ul>
+  </header>
+  
+
+<link href="public/styles/portfolio.html" rel="stylesheet" />
+<link href="public/styles/portfolio_responsive.html" rel="stylesheet" />
+
+<style>
+/* --- THEME VARIABLES (Unchanged) --- */
+:root {
+    --bg-dark: #0a0a0a;
+    --text-light: #e6e6e6;
+    --accent: #b8ff48; /* Bright Green Accent */
+    --muted: #999;
+    --card-bg: #161616;
+}
+
+/* --- NEW GLOBAL CONTAINER STYLE (Experience page se liya gaya) --- */
+.ranx_container {
+    /* Max width aur center alignment ke liye */
+    max-width: 1100px;
+    margin: 50px auto; 
+    padding: 0 20px;
+}
+
+/* --- PAGE HEADER SECTION (Experience page se liya gaya) --- */
+.page_header_section {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.page_title_center {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--text-light);
+    margin: 0;
+}
+.page_title_center span {
+    color: var(--accent);
+}
+.breadcrumb_center {
+    display: inline-flex;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    user-select: none;
+}
+.breadcrumb_center a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* --- BASE STYLES MODIFIED --- */
+.main_content {
+    background: var(--bg-dark); 
+    color: var(--text-light);
+    /* Remove padding-top here as it's now handled by ranx_container margin-top */
+    padding-top: 0; 
+}
+
+/* Old title container styles removed/modified to use new header structure */
+.main_title_container {
+    /* This style block is no longer needed because we are using page_header_section */
+    display: none; /* Hide the old title container */
+}
+
+.main_content_scroll {
+    /* Margin hata kar container ko use karenge */
+    padding: 0; /* Remove horizontal padding */
+}
+
+/* --- PORTFOLIO GRID ADJUSTMENT --- */
+.portfolio_grid {
+    /* Grid ka container agar woh grid system use kar raha hai */
+    margin: 0 -5px; /* If using negative margin for grid columns */
+}
+
+
+/* --- PORTFOLIO ITEM STYLING (The Zoom Target) --- */
+.portfolio_item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255,255,255,0.08);
+    transform-origin: center center; 
+    min-height: 250px;
+    max-height: 250px;
+    margin-bottom: 5px;
+}
+
+/* ... (Rest of portfolio item, overlay, and button styles remain the same) ... */
+.portfolio_item img {
+    display: block;
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+/* --- THE ZOOM EFFECT (Poora Item Zoom-in Hoga) --- */
+.portfolio_item:hover {
+    transform: scale(1.03); 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7); 
+    border-color: rgba(184, 255, 72, 0.5); 
+}
+
+/* Content Overlay */
+.portfolio_item_content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.98); 
+    opacity: 0; 
+    transition: opacity 0.4s ease;
+    text-align: center;
+    z-index: 2; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio_item:hover .portfolio_item_content {
+    opacity: 1; 
+}
+
+.portfolio_item_title {
+    color: var(--accent); 
+    font-weight: 700;
+    font-size: 28px !important; 
+    margin-bottom: 5px;
+}
+
+/* Horizontal Rule (Divider) */
+.portfolio_item_content hr {
+    background-color: var(--text-light);
+    border: none;
+    height: 3px;
+    margin-top: 0.1rem; 
+    margin-bottom: 0.8rem;
+    border-radius: 2px;
+}
+
+/* Button Group Styling */
+.item-preview {
+    min-height: auto; 
+    padding: 12px;
+}
+.item-preview__preview-buttons {
+    padding-top: 12px;
+    display: flex; 
+    justify-content: center;
+    gap: 10px; 
+    flex-wrap: wrap;
+}
+
+/* --- BUTTON STYLES --- */
+.btn, button, [role=button], [type=submit], .item-preview__preview-buttons>a {
+    background-color: var(--bg-dark) !important;
+    border: 2px solid var(--accent) !important; 
+    color: var(--text-light) !important;
+    font-weight: 600;
+    padding: 8px 25px; 
+    border-radius: 50px; 
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    margin: 0 5px 10px 5px !important; 
+}
+
+.btn:hover, button:hover, [role=button]:hover, [type=submit]:hover, .item-preview__preview-buttons>a:hover {
+    background-color: var(--accent) !important;
+    color: var(--bg-dark) !important; 
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(184, 255, 72, 0.4);
+    text-decoration: none; 
+    outline: none; 
+}
+
+/* Icon Styling (Using Font Awesome) */
+.btn-icon.screenshots, .btn-icon.live-preview {
+    padding-right: 40px !important; 
+    position: relative;
+}
+
+.btn-icon.screenshots:after, .btn-icon.live-preview:after {
+    background-image: none !important;
+    content: "" !important; 
+    float: none;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    height: auto;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 15px;
+    transition: color 0.3s ease;
+    color: var(--accent); 
+}
+
+.btn-icon.screenshots:after {
+    content: "\f03e"; /* fa-image */
+}
+.btn-icon.live-preview:after {
+    content: "\f06e"; /* fa-eye */
+}
+
+.btn-icon:hover:after {
+    color: var(--bg-dark) !important; 
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .page_title_center {
+        font-size: 3rem;
+    }
+}
+</style>
+
+<div class="main_content">
+    
+    <div class="ranx_container"> 
+        
+        <section class="page_header_section">
+            <nav class="breadcrumb_center">
+                <a href="index.html">Home</a> <span>→</span> <span>Portfolio</span>
+            </nav>
+            <h1 class="page_title_center">Portfo<span>lio.</span></h1>
+        </section>
+
+        <div class="main_content_scroll mCustomScrollbar" data-mcs-theme="minimal-dark">
+            
+            <div class="portfolio_grid grid clearfix">
+                
+                <div class="grid-item portfolio_item p_design" >
+                    <img src="images/HRMS-admin-dashboadd1.png" alt="">
+                    <div class="portfolio_item_content d-flex flex-column align-items-center justify-content-center">
+                        <div class="portfolio_item_title">HRMS</div>
+                        <hr style="width: 25%;">
+                        <div class="item-preview__actions">
+                            <div id="fullscreen" class="item-preview__preview-buttons">
+                                <a data-view="screenshotGallery" href="#"onclick="getedithrms(&quot;HRMS-admin-dashboadd1.png&quot;)" role="button" class="btn-icon screenshots" rel="noopener">
+                                    Screenshots
+                                </a>
+                                <a data-view="itemPreviewButtonTracking" href="http://level3bos.com/hrm/" role="button" class="btn-icon live-preview" target="_blank" rel="noopener nofollow">
+                                    Visit
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-item portfolio_item p_design">
+                    <img src="images/HRMS-Job-Portal.png" alt="">
+                    <div class="portfolio_item_content d-flex flex-column align-items-center justify-content-center">
+                        <div class="portfolio_item_title">Job Portal</div>
+                        <hr style="width: 45%;">
+                        <div class="item-preview__actions">
+                            <div id="fullscreen" class="item-preview__preview-buttons">
+                                <a data-view="screenshotGallery" href="#"onclick="geteditJP(&quot;HRMS-Job-Portal.png&quot;)" role="button" class="btn-icon screenshots" rel="noopener">
+                                    Screenshots
+                                </a>
+                                <a data-view="itemPreviewButtonTracking" href="http://level3bos.com/hrm/job_list" role="button" class="btn-icon live-preview" target="_blank" rel="noopener nofollow">
+                                    Visit
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="portfolio_grid grid clearfix">
+                
+                <div class="grid-item portfolio_item p_design">
+                    <img src="images/SCHEDULING.jpg" alt="">
+                    <div class="portfolio_item_content d-flex flex-column align-items-center justify-content-center">
+                        <div class="portfolio_item_title">Email Schedule</div>
+                        <hr style="width: 65%;">
+                        <div class="item-preview__actions">
+                            <div id="fullscreen" class="item-preview__preview-buttons">
+                                <a data-view="screenshotGallery" href="#"onclick="getschedule(&quot;SCHEDULING.jpg&quot;)" role="button" class="btn-icon screenshots" rel="noopener">
+                                    Screenshots
+                                </a>
+                                <a data-view="itemPreviewButtonTracking" href="http://mobilelinkusa.com/scheduling/" role="button" class="btn-icon live-preview" target="_blank" rel="noopener nofollow">
+                                    Visit
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-item portfolio_item p_design" >
+                    <img src="images/MobilyLLC.png" alt="">
+                    <div class="portfolio_item_content d-flex flex-column align-items-center justify-content-center">
+                        <div class="portfolio_item_title">CallingTree II</div>
+                        <hr style="width: 55%;">
+                        <div class="item-preview__actions">
+                            <div id="fullscreen" class="item-preview__preview-buttons">
+                                <a data-view="screenshotGallery" href="#"onclick="getmobily(&quot;MobilyLLC.png&quot;)" role="button" class="btn-icon screenshots" rel="noopener">
+                                    Screenshots
+                                </a>
+                                <a data-view="itemPreviewButtonTracking" href="http://mobilyllc.com/callingtree/" role="button" class="btn-icon live-preview" target="_blank" rel="noopener nofollow">
+                                    Visit
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="portfolio_grid grid clearfix">
+                
+                <div class="grid-item portfolio_item p_design">
+                    <img src="images/CallingTree.jpg" alt="">
+                    <div class="portfolio_item_content d-flex flex-column align-items-center justify-content-center">
+                        <div class="portfolio_item_title">CallingTree</div>
+                        <hr style="width: 45%;">
+                        <div class="item-preview__actions">
+                            <div id="fullscreen" class="item-preview__preview-buttons">
+                                <a data-view="screenshotGallery" href="#"onclick="getmobilelink(&quot;CallingTree.jpg&quot;)" role="button" class="btn-icon screenshots" rel="noopener">
+                                    Screenshots
+                                </a>
+                                <a data-view="itemPreviewButtonTracking" href="https://mobilelinkusa.com/callingtree/" role="button" class="btn-icon live-preview" target="_blank" rel="noopener nofollow">
+                                    Visit
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-item portfolio_item p_design">
+                    <img src="images/EMS.jpg" alt="">
+                    <div class="portfolio_item_content d-flex flex-column align-items-center justify-content-center">
+                        <div class="portfolio_item_title">EMS</div>
+                        <hr style="width: 20%;">
+                        <div class="item-preview__actions">
+                            <div id="fullscreen" class="item-preview__preview-buttons">
+                                <a data-view="screenshotGallery" href="#"onclick="getems(&quot;EMS.jpg&quot;)" role="button" class="btn-icon screenshots" rel="noopener">
+                                    Screenshots
+                                </a>
+                                <a data-view="itemPreviewButtonTracking" href="https://mobilelinkusa.com/ems/" role="button" class="btn-icon live-preview" target="_blank" rel="noopener nofollow">
+                                    Visit
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio_grid grid clearfix">
+                
+                <div class="grid-item portfolio_item p_design">
+                    <img src="images/PayRoll.jpg" alt="">
+                    <div class="portfolio_item_content d-flex flex-column align-items-center justify-content-center">
+                        <div class="portfolio_item_title">Pay Roll</div>
+                        <hr style="width: 35%;">
+                        <div class="item-preview__actions">
+                            <div id="fullscreen" class="item-preview__preview-buttons">
+                                <a data-view="screenshotGallery" href="#"onclick="getpayroll(&quot;PayRoll.jpg&quot;)" role="button" class="btn-icon screenshots" rel="noopener">
+                                    Screenshots
+                                </a>
+                                <a data-view="itemPreviewButtonTracking" href="http://level3bos.com/payroll/" role="button" class="btn-icon live-preview" target="_blank" rel="noopener nofollow">
+                                    Visit
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-item portfolio_item p_design">
+                    <img src="images/OPAudit.jpg" alt="">
+                    <div class="portfolio_item_content d-flex flex-column align-items-center justify-content-center">
+                        <div class="portfolio_item_title">OP Audit</div>
+                        <hr style="width: 40%;">
+                        <div class="item-preview__actions">
+                            <div id="fullscreen" class="item-preview__preview-buttons">
+                                <a data-view="screenshotGallery" href="#"onclick="getedit(&quot;OPAudit.jpg&quot;)" role="button" class="btn-icon screenshots" rel="noopener">
+                                    Screenshots
+                                </a>
+                                <a data-view="itemPreviewButtonTracking" href="https://mobilelinkusa.com/opaudit/" role="button" class="btn-icon live-preview" target="_blank" rel="noopener nofollow">
+                                    Visit
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio_grid grid clearfix">
+                
+                <div class="grid-item portfolio_item p_design">
+                    <img src="images/HRSCF.jpg" alt="">
+                    <div class="portfolio_item_content d-flex flex-column align-items-center justify-content-center">
+                        <div class="portfolio_item_title">HRSCF</div>
+                        <hr style="width: 30%;">
+                        <div class="item-preview__actions">
+                            <div id="fullscreen" class="item-preview__preview-buttons">
+                                <a data-view="screenshotGallery" href="#"onclick="getedit(&quot;HRSCF.jpg&quot;)" role="button" class="btn-icon screenshots" rel="noopener">
+                                    Screenshots
+                                </a>
+                                <a data-view="itemPreviewButtonTracking" href="https://mobilelinkusa.com/hrscf" role="button" class="btn-icon live-preview" target="_blank" rel="noopener nofollow">
+                                    Visit
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div> 
+    </div> 
+    
+    <div id="modals"></div>
+</div>
+<script>
+    // ... (Your existing JavaScript functions remain here)
+    function getedit($id){
+        // alert($id);
+        $.get('http://192.168.18.209:8088/viewportfolio/'+$id,function(data){
+        $('#modals').empty();
+        $('#modals').append(data);
+        $('#getmeImage').modal('show');
+        });
+    }
+    function getedithrms($id){
+        // alert($id);
+        $.get('http://192.168.18.209:8088/viewportfoliohrms/'+$id,function(data){
+        $('#modals').empty();
+        $('#modals').append(data);
+        $('#getmeImageHRMS').modal('show');
+        });
+    }
+    function geteditJP($id){
+        // alert($id);
+        $.get('http://192.168.18.209:8088/viewportfolioJP/'+$id,function(data){
+        $('#modals').empty();
+        $('#modals').append(data);
+        $('#getmeImageHRMS').modal('show');
+        });
+    }
+    function getschedule($id){
+        // alert($id);
+        $.get('http://192.168.18.209:8088/viewportfolioES/'+$id,function(data){
+        $('#modals').empty();
+        $('#modals').append(data);
+        $('#getmeImageES').modal('show');
+        });
+    }
+    function getmobily($id){
+        // alert($id);
+        $.get('http://192.168.18.209:8088/viewportfolioMobily/'+$id,function(data){
+        $('#modals').empty();
+        $('#modals').append(data);
+        $('#getmeImageMobily').modal('show');
+        });
+    }
+    function getmobilelink($id){
+        // alert($id);
+        $.get('http://192.168.18.209:8088/viewportfolioMobilelink/'+$id,function(data){
+        $('#modals').empty();
+        $('#modals').append(data);
+        $('#getmeImageMobilelink').modal('show');
+        });
+    }
+    function getems($id){
+        // alert($id);
+        $.get('http://192.168.18.209:8088/viewportfolioEMS/'+$id,function(data){
+        $('#modals').empty();
+        $('#modals').append(data);
+        $('#getmeImageEMS').modal('show');
+        });
+    }
+    function getpayroll($id){
+        // alert($id);
+        $.get('http://192.168.18.209:8088/viewportfolioPayroll/'+$id,function(data){
+        $('#modals').empty();
+        $('#modals').append(data);
+        $('#getmeImagePayroll').modal('show');
+        });
+    }
+</script>
+<link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- FOOTER -->
+  <footer>
+    Copyright © <script>document.write(new Date().getFullYear());</script>
+    All rights reserved | Designed & Developed by 
+    <a href="index.html">Arqum Siddiqui</a>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Current path le lo (e.g., '/about', '/skill', ya sirf '/')
+      var currentPath = window.location.pathname;
+
+      // Agar path sirf '/' hai (Home page), toh usko '/home' consider kar lo comparison ke liye
+      if (currentPath === 'index.html') {
+          currentPath = '/home'; 
+      }
+      
+      var navLinks = document.querySelectorAll('header ul li a');
+
+      navLinks.forEach(function(link) {
+        // Link ka href le lo (e.g., 'http://localhost/about')
+        var linkHref = link.getAttribute('href');
+        
+        // Link ke href ka path le lo (e.g., '/about')
+        var linkPath = new URL(linkHref%2c%20window.location.html).pathname;
+
+        // Agar path sirf '/' hai toh usko '/home' consider kar lo
+        if (linkPath === 'index.html') {
+            linkPath = '/home';
+        }
+
+        // Compare karte hain current path aur link path ko
+        // Hum .toLowerCase() use kar rahe hain taaki case-insensitive comparison ho
+        if (currentPath.toLowerCase().includes(linkPath.toLowerCase()) && linkPath !== '/home') {
+          // Agar link 'home' nahi hai aur current path usko contain karta hai
+          link.classList.add('active');
+        } 
+        
+        // Special case for Home link (exact match)
+        if (currentPath === '/home' && linkPath === '/home') {
+            link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+
+<!-- Mirrored from 192.168.18.209:8088/portfolio by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 02 Jan 2026 07:12:25 GMT -->
+</html>

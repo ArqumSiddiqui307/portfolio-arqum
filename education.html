@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from 192.168.18.209:8088/education by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 02 Jan 2026 07:11:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arqum | Portfolio</title>
+  <script src="../code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../cdn.jsdelivr.net/npm/%40popperjs/core%402.11.6/dist/umd/popper.min.js"></script>
+  <script src="../cdn.jsdelivr.net/npm/bootstrap%405.3.3/dist/js/bootstrap.min.js"></script>
+  
+  <link href="../cdn.jsdelivr.net/npm/bootstrap%405.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&amp;display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #0a0a0a;
+      --text-light: #e6e6e6;
+      --accent: #b8ff48;
+      --muted: #999;
+      --card-bg: #161616;
+    }
+
+    /* ✅ NEW: Set base font size on HTML for better scaling */
+    html {
+        font-size: 100%; /* Base 16px */
+    }
+
+    body {
+      /* ✅ UPDATED: Poppins to Lato */
+      background: var(--bg-dark);
+      color: var(--text-light);
+      font-family: 'Lato', sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* HEADER (STICKY) */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      text-align: center;
+      padding: 18px 0;
+    }
+
+    header ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    header ul li {
+      display: inline-block;
+      margin: 0 18px;
+    }
+
+    header ul li a {
+      color: var(--muted);
+      font-weight: 500;
+      transition: 0.3s;
+      font-size: 0.95rem;
+    }
+
+    header ul li a:hover {
+      color: var(--accent);
+    }
+    
+    /* --- NEW ACTIVE LINK STYLE --- */
+    header ul li a.active {
+      color: var(--accent); /* Highlight with the green accent color */
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 3px;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9)), 
+                  url('images/Arqum.png') center/contain no-repeat;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-color: #0f0f0f;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      padding: 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .btn-custom {
+      background: var(--accent);
+      color: #000;
+      border-radius: 50px;
+      padding: 10px 26px;
+      font-weight: 400;
+      transition: 0.3s;
+    }
+
+    .btn-custom:hover {
+      /* background: #d9ff80; */
+      background: #ffffff;
+      color: #000;
+      transform: translateY(-2px);
+    }
+
+    /* INFO SECTION */
+    .info-section {
+      max-width: 1100px;
+      margin: 80px auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      padding: 0 20px;
+    }
+
+    .info-column {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .info-box {
+      background: var(--card-bg);
+      padding: 18px 24px;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .info-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .info-box h5 {
+      color: var(--accent);
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+
+    .info-box p {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 50px 0 25px;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid #222;
+    }
+
+    footer a {
+      color: var(--accent);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero {
+        height: 60vh;
+        background-size: cover;
+      }
+
+      .info-section {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="skill.html">Skills</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+    </ul>
+  </header>
+  
+<div class="ranx_container"> 
+    
+    <section class="page_header_section">
+        <nav class="breadcrumb_center">
+            <a href="index.html">Home</a> <span>→</span> <span>Education</span>
+        </nav>
+        <h1 class="page_title_center">My <span>Journey.</span></h1>
+    </section>
+
+    <div class="content_sections_wrapper">
+
+        <div class="section_card education_timeline_card">
+            <div class="section_title">Academic Qualifications</div>
+            
+            <div class="education_timeline">
+
+                <div class="edu_item">
+                    <div class="edu_year_container">
+                        <div class="edu_year">2015 - 2018</div>
+                    </div>
+                    <div class="edu_content">
+                        <div class="edu_title_container">
+                            <div class="edu_title">GRADUATION | BSSE</div>
+                            <div class="edu_subtitle">ILMA UNIVERSITY</div>
+                        </div>
+                        <div class="edu_text">
+                            <p>Successfully completed Bachelor of Science in Software Engineering (BSSE).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edu_item">
+                    <div class="edu_year_container">
+                        <div class="edu_year">2012 - 2014</div>
+                    </div>
+                    <div class="edu_content">
+                        <div class="edu_title_container">
+                            <div class="edu_title">INTERMEDIATE</div>
+                            <div class="edu_subtitle">Higher Education (Inter Board Of Education)</div>
+                        </div>
+                        <div class="edu_text">
+                            <p>Successfully completed Intermediate education.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edu_item">
+                    <div class="edu_year_container">
+                        <div class="edu_year">2012</div>
+                    </div>
+                    <div class="edu_content">
+                        <div class="edu_title_container">
+                            <div class="edu_title">MATRICULATION</div>
+                            <div class="edu_subtitle">Secondary Board of Education Karachi</div>
+                        </div>
+                        <div class="edu_text">
+                            <p>Successfully completed Matriculation.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<style>
+/* --- Theme Variables (Assuming apptheme defines these) --- */
+:root {
+    --bg-dark: #0a0a0a;
+    --text-light: #e6e6e6;
+    --accent: #b8ff48; /* Bright Green Accent */
+    --muted: #999;
+    --card-bg: #161616;
+}
+
+/* --- Global Container & Page Header (Copied from About/Skills) --- */
+.ranx_container {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+.page_header_section {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.breadcrumb_center {
+    display: inline-flex;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    user-select: none;
+}
+.breadcrumb_center a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+}
+.breadcrumb_center span {
+    margin: 0 6px;
+    color: var(--muted);
+}
+.page_title_center {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--text-light);
+    margin: 0;
+}
+.page_title_center span {
+    color: var(--accent);
+}
+
+.content_sections_wrapper {
+    padding-top: 20px;
+}
+
+/* --- Base Section Card Styles (Copied from About/Skills) --- */
+.section_card {
+    background: var(--card-bg);
+    color: var(--text-light);
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+    border: 1px solid rgba(255,255,255,0.08);
+}
+.section_title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--accent); 
+    border-bottom: 2px solid rgba(184, 255, 72, 0.2);
+    padding-bottom: 8px;
+}
+
+/* --- EDUCATION TIMELINE SPECIFIC STYLES --- */
+
+/* Timeline Container */
+.education_timeline {
+    position: relative;
+    padding-left: 20px; /* Space for the line */
+}
+
+/* Vertical Line */
+.education_timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle dark line */
+}
+
+.edu_item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 15px 0;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Timeline Dot */
+.edu_item::after {
+    content: '';
+    position: absolute;
+    left: -7px; /* Align with the line */
+    top: 25px; 
+    width: 16px;
+    height: 16px;
+    background-color: var(--accent); /* Bright Green Dot */
+    border-radius: 50%;
+    border: 3px solid var(--card-bg); /* Ring effect */
+    transition: all 0.3s ease;
+}
+
+.edu_item:hover::after {
+    transform: scale(1.15);
+    background-color: var(--text-light); /* Dot changes color on hover */
+    border-color: var(--accent);
+}
+
+.edu_year_container {
+    flex-shrink: 0;
+    width: 120px; /* Fixed width for year column */
+    padding-right: 20px;
+    text-align: right;
+}
+
+.edu_year {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding-top: 4px; /* Align with dot */
+}
+
+.edu_content {
+    flex-grow: 1;
+    padding-left: 20px;
+    background: #1e1e1e; /* Subtle background for content */
+    padding: 15px 20px;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent); /* Accent bar */
+    transition: all 0.3s ease;
+}
+.edu_item:hover .edu_content {
+    background: #252525;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.edu_title_container {
+    margin-bottom: 8px;
+}
+
+.edu_title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 3px;
+}
+
+.edu_subtitle {
+    font-size: 14px;
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.edu_text p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .page_title_center {
+        font-size: 3rem;
+    }
+    .section_card {
+        padding: 20px;
+    }
+    .edu_item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .edu_year_container {
+        width: 100%;
+        padding-right: 0;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+    .edu_year {
+        padding-top: 0;
+    }
+    .edu_content {
+        padding-left: 15px;
+        margin-left: 10px; /* Pushes content away from the vertical line */
+    }
+    /* Adjust dot position for column layout */
+    .edu_item::after {
+        left: -18px;
+        top: 8px;
+    }
+    /* Adjust vertical line to the very left for mobile */
+    .education_timeline {
+        padding-left: 30px; 
+    }
+    .education_timeline::before {
+        left: 10px;
+    }
+}
+</style>
+
+<link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <!-- FOOTER -->
+  <footer>
+    Copyright © <script>document.write(new Date().getFullYear());</script>
+    All rights reserved | Designed & Developed by 
+    <a href="index.html">Arqum Siddiqui</a>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Current path le lo (e.g., '/about', '/skill', ya sirf '/')
+      var currentPath = window.location.pathname;
+
+      // Agar path sirf '/' hai (Home page), toh usko '/home' consider kar lo comparison ke liye
+      if (currentPath === 'index.html') {
+          currentPath = '/home'; 
+      }
+      
+      var navLinks = document.querySelectorAll('header ul li a');
+
+      navLinks.forEach(function(link) {
+        // Link ka href le lo (e.g., 'http://localhost/about')
+        var linkHref = link.getAttribute('href');
+        
+        // Link ke href ka path le lo (e.g., '/about')
+        var linkPath = new URL(linkHref%2c%20window.location.html).pathname;
+
+        // Agar path sirf '/' hai toh usko '/home' consider kar lo
+        if (linkPath === 'index.html') {
+            linkPath = '/home';
+        }
+
+        // Compare karte hain current path aur link path ko
+        // Hum .toLowerCase() use kar rahe hain taaki case-insensitive comparison ho
+        if (currentPath.toLowerCase().includes(linkPath.toLowerCase()) && linkPath !== '/home') {
+          // Agar link 'home' nahi hai aur current path usko contain karta hai
+          link.classList.add('active');
+        } 
+        
+        // Special case for Home link (exact match)
+        if (currentPath === '/home' && linkPath === '/home') {
+            link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+
+<!-- Mirrored from 192.168.18.209:8088/education by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 02 Jan 2026 07:11:47 GMT -->
+</html>
