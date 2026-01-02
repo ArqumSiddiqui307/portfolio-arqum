@@ -595,7 +595,7 @@
         var linkHref = link.getAttribute('href');
         
         // Link ke href ka path le lo (e.g., '/about')
-        var linkPath = new URL(linkHref%2c%20window.location.html).pathname;
+        var linkPath = new URL(linkHref, window.location.html).pathname;
 
         // Agar path sirf '/' hai toh usko '/home' consider kar lo
         if (linkPath === 'index.html') {
