@@ -204,6 +204,11 @@
         grid-template-columns: 1fr;
       }
     }
+    
+    .modal-header {
+        justify-content: space-between!important;
+        align-items: center!important;
+    }
   </style>
 </head>
 
@@ -674,18 +679,36 @@
     }
     function geteditJP($id){
         // alert($id);
-        $.get('http://192.168.18.209:8088/viewportfolioJP/'+$id,function(data){
-        $('#modals').empty();
-        $('#modals').append(data);
-        $('#getmeImageHRMS').modal('show');
+        // $.get('http://192.168.18.209:8088/viewportfolioJP/'+$id,function(data){
+        // $('#modals').empty();
+        // $('#modals').append(data);
+        // $('#getmeImageHRMS').modal('show');
+        // });
+
+        // Ye direct aapki HTML file ko load karega
+        $.get('viewportfolioJP.html', function(data) {
+            $('#modals').html(data); // Append ki jagah .html() use karein taaki purana clear ho
+            
+            // Modal ko manual trigger karein Bootstrap 5 ke mutabiq
+            var hrmsModal = new bootstrap.Modal(document.getElementById('getmeImageHRMS'));
+            hrmsModal.show();
         });
     }
     function getschedule($id){
         // alert($id);
-        $.get('http://192.168.18.209:8088/viewportfolioES/'+$id,function(data){
-        $('#modals').empty();
-        $('#modals').append(data);
-        $('#getmeImageES').modal('show');
+        // $.get('http://192.168.18.209:8088/viewportfolioES/'+$id,function(data){
+        // $('#modals').empty();
+        // $('#modals').append(data);
+        // $('#getmeImageES').modal('show');
+        // });
+
+        // Ye direct aapki HTML file ko load karega
+        $.get('viewportfolioES.html', function(data) {
+            $('#modals').html(data); // Append ki jagah .html() use karein taaki purana clear ho
+            
+            // Modal ko manual trigger karein Bootstrap 5 ke mutabiq
+            var hrmsModal = new bootstrap.Modal(document.getElementById('getmeImageHRMS'));
+            hrmsModal.show();
         });
     }
     function getmobily($id){
