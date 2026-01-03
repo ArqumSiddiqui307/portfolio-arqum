@@ -611,7 +611,7 @@
                         <hr style="width: 40%;">
                         <div class="item-preview__actions">
                             <div id="fullscreen" class="item-preview__preview-buttons">
-                                <a data-view="screenshotGallery" href="#"onclick="getedit(&quot;OPAudit.jpg&quot;)" role="button" class="btn-icon screenshots" rel="noopener">
+                                <a data-view="screenshotGallery" href="#"onclick="getopaudit(&quot;OPAudit.jpg&quot;)" role="button" class="btn-icon screenshots" rel="noopener">
                                     Screenshots
                                 </a>
                                 <a data-view="itemPreviewButtonTracking" href="https://mobilelinkusa.com/opaudit/" role="button" class="btn-icon live-preview" target="_blank" rel="noopener nofollow">
@@ -632,7 +632,7 @@
                         <hr style="width: 30%;">
                         <div class="item-preview__actions">
                             <div id="fullscreen" class="item-preview__preview-buttons">
-                                <a data-view="screenshotGallery" href="#"onclick="getedit(&quot;HRSCF.jpg&quot;)" role="button" class="btn-icon screenshots" rel="noopener">
+                                <a data-view="screenshotGallery" href="#"onclick="gethrscf(&quot;HRSCF.jpg&quot;)" role="button" class="btn-icon screenshots" rel="noopener">
                                     Screenshots
                                 </a>
                                 <a data-view="itemPreviewButtonTracking" href="https://mobilelinkusa.com/hrscf" role="button" class="btn-icon live-preview" target="_blank" rel="noopener nofollow">
@@ -707,40 +707,110 @@
             $('#modals').html(data); // Append ki jagah .html() use karein taaki purana clear ho
             
             // Modal ko manual trigger karein Bootstrap 5 ke mutabiq
-            var hrmsModal = new bootstrap.Modal(document.getElementById('getmeImageHRMS'));
+            var hrmsModal = new bootstrap.Modal(document.getElementById('getmeImageES'));
             hrmsModal.show();
         });
     }
     function getmobily($id){
         // alert($id);
-        $.get('http://192.168.18.209:8088/viewportfolioMobily/'+$id,function(data){
-        $('#modals').empty();
-        $('#modals').append(data);
-        $('#getmeImageMobily').modal('show');
+        // $.get('http://192.168.18.209:8088/viewportfolioMobily/'+$id,function(data){
+        // $('#modals').empty();
+        // $('#modals').append(data);
+        // $('#getmeImageMobily').modal('show');
+        // });
+
+        // Ye direct aapki HTML file ko load karega
+        $.get('viewportfolioMobily.html', function(data) {
+            $('#modals').html(data); // Append ki jagah .html() use karein taaki purana clear ho
+            
+            // Modal ko manual trigger karein Bootstrap 5 ke mutabiq
+            var hrmsModal = new bootstrap.Modal(document.getElementById('getmeImageMobily'));
+            hrmsModal.show();
         });
     }
     function getmobilelink($id){
         // alert($id);
-        $.get('http://192.168.18.209:8088/viewportfolioMobilelink/'+$id,function(data){
-        $('#modals').empty();
-        $('#modals').append(data);
-        $('#getmeImageMobilelink').modal('show');
+        // $.get('http://192.168.18.209:8088/viewportfolioMobilelink/'+$id,function(data){
+        // $('#modals').empty();
+        // $('#modals').append(data);
+        // $('#getmeImageMobilelink').modal('show');
+        // });
+
+        // Ye direct aapki HTML file ko load karega
+        $.get('viewportfolioMobilelink.html', function(data) {
+            $('#modals').html(data); // Append ki jagah .html() use karein taaki purana clear ho
+            
+            // Modal ko manual trigger karein Bootstrap 5 ke mutabiq
+            var hrmsModal = new bootstrap.Modal(document.getElementById('getmeImageMobilelink'));
+            hrmsModal.show();
         });
     }
     function getems($id){
         // alert($id);
-        $.get('http://192.168.18.209:8088/viewportfolioEMS/'+$id,function(data){
-        $('#modals').empty();
-        $('#modals').append(data);
-        $('#getmeImageEMS').modal('show');
+        // $.get('http://192.168.18.209:8088/viewportfolioEMS/'+$id,function(data){
+        // $('#modals').empty();
+        // $('#modals').append(data);
+        // $('#getmeImageEMS').modal('show');
+        // });
+
+        // Ye direct aapki HTML file ko load karega
+        $.get('viewportfolioEMS.html', function(data) {
+            $('#modals').html(data); // Append ki jagah .html() use karein taaki purana clear ho
+            
+            // Modal ko manual trigger karein Bootstrap 5 ke mutabiq
+            var hrmsModal = new bootstrap.Modal(document.getElementById('getmeImageEMS'));
+            hrmsModal.show();
         });
     }
     function getpayroll($id){
         // alert($id);
-        $.get('http://192.168.18.209:8088/viewportfolioPayroll/'+$id,function(data){
-        $('#modals').empty();
-        $('#modals').append(data);
-        $('#getmeImagePayroll').modal('show');
+        // $.get('http://192.168.18.209:8088/viewportfolioPayroll/'+$id,function(data){
+        // $('#modals').empty();
+        // $('#modals').append(data);
+        // $('#getmeImagePayroll').modal('show');
+        // });
+
+        // Ye direct aapki HTML file ko load karega
+        $.get('viewportfolioPayroll.html', function(data) {
+            $('#modals').html(data); // Append ki jagah .html() use karein taaki purana clear ho
+            
+            // Modal ko manual trigger karein Bootstrap 5 ke mutabiq
+            var hrmsModal = new bootstrap.Modal(document.getElementById('getmeImagePayroll'));
+            hrmsModal.show();
+        });
+    }
+    function getopaudit($id){
+        // alert($id);
+        // $.get('http://192.168.18.209:8088/viewportfolioopaudit/'+$id,function(data){
+        // $('#modals').empty();
+        // $('#modals').append(data);
+        // $('#getmeImageHRMS').modal('show');
+        // });
+
+        // Ye direct aapki HTML file ko load karega
+        $.get('viewportfolioopaudit.html', function(data) {
+            $('#modals').html(data); // Append ki jagah .html() use karein taaki purana clear ho
+            
+            // Modal ko manual trigger karein Bootstrap 5 ke mutabiq
+            var hrmsModal = new bootstrap.Modal(document.getElementById('getmeImageOPAudit'));
+            hrmsModal.show();
+        });
+    }
+    function gethrscf($id){
+        // alert($id);
+        // $.get('http://192.168.18.209:8088/viewportfoliohrscf/'+$id,function(data){
+        // $('#modals').empty();
+        // $('#modals').append(data);
+        // $('#getmeImageHRSCF').modal('show');
+        // });
+
+        // Ye direct aapki HTML file ko load karega
+        $.get('viewportfoliohrscf.html', function(data) {
+            $('#modals').html(data); // Append ki jagah .html() use karein taaki purana clear ho
+            
+            // Modal ko manual trigger karein Bootstrap 5 ke mutabiq
+            var hrmsModal = new bootstrap.Modal(document.getElementById('getmeImageHRSCF'));
+            hrmsModal.show();
         });
     }
 </script>
