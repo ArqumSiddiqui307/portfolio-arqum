@@ -826,6 +826,23 @@
             hrmsModal.show();
         });
     }
+    function geteditFHRapp($id){
+        // alert($id);
+        // $.get('http://192.168.18.209:8088/viewportfolioFamehrmsApp/'+$id,function(data){
+        // $('#modals').empty();
+        // $('#modals').append(data);
+        // $('#getmeImageFamehrmsApp').modal('show');
+        // });
+
+        // Ye direct aapki HTML file ko load karega
+        $.get('viewportfolioFamehrmsApp.html', function(data) {
+            $('#modals').html(data); // Append ki jagah .html() use karein taaki purana clear ho
+            
+            // Modal ko manual trigger karein Bootstrap 5 ke mutabiq
+            var hrmsModal = new bootstrap.Modal(document.getElementById('getmeImageFamehrmsApp'));
+            hrmsModal.show();
+        });
+    }
 </script>
 <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
