@@ -541,6 +541,8 @@
             bb.style.display = "block";
 
         } else{
+            $("#next").removeClass("active");
+            next.style.display = "none";
 
             // $("#previous").addClass("active");
             // previous.style.display = "block";
@@ -649,6 +651,8 @@ function hrmprevious(){
 
         // $("#previous").addClass("active");
         // previous.style.display = "block";
+        $("#next").addClass("active");
+        next.style.display = "block";
 
         y.style.display = "none";
         yy.style.display = "none";
