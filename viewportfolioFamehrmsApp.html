@@ -520,10 +520,12 @@
             b.style.display = "none";
             bb.style.display = "none";
 
-        }else if (a.style.display === "block") {
+        }else{
 
             // $("#previous").addClass("active");
             // previous.style.display = "block";
+            $("#next").removeClass("active");
+            next.style.display = "none";
 
             y.style.display = "none";
             yy.style.display = "none";
@@ -540,30 +542,7 @@
             b.style.display = "block";
             bb.style.display = "block";
 
-        } else{
-            $("#next").removeClass("active");
-            next.style.display = "none";
-
-            // $("#previous").addClass("active");
-            // previous.style.display = "block";
-
-            y.style.display = "none";
-            yy.style.display = "none";
-
-            x.style.display = "none";
-            xx.style.display = "none";
-
-            z.style.display = "none";
-            zz.style.display = "none";
-
-            a.style.display = "none";
-            aa.style.display = "none";
-
-            b.style.display = "none";
-            bb.style.display = "none";
-
         }
-
     }
 
 function hrmprevious(){
