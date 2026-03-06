@@ -452,6 +452,22 @@
         font-size: 3rem;
     }
 }
+
+.btn-filter{
+    margin:5px;
+    padding:8px 20px;
+    border-radius:30px;
+    border:2px solid var(--accent);
+    background:transparent;
+    color:var(--text-light);
+    cursor:pointer;
+}
+
+.btn-filter.active,
+.btn-filter:hover{
+    background:var(--accent);
+    color:#000;
+}
 </style>
 
 <div class="main_content">
@@ -465,10 +481,16 @@
             <h1 class="page_title_center">Portfo<span>lio.</span></h1>
         </section>
 
+        <div class="text-center mb-5">
+            <button class="btn btn-filter active" onclick="filterProjects('all')">All</button>
+            <button class="btn btn-filter" onclick="filterProjects('web')">Web Projects</button>
+            <button class="btn btn-filter" onclick="filterProjects('app')">Application</button>
+        </div>
+
         <div class="main_content_scroll mCustomScrollbar" data-mcs-theme="minimal-dark">
             
             <div class="portfolio_grid grid clearfix">
-                <div class="grid-item portfolio_item p_design" >
+                <div class="grid-item portfolio_item p_design web" >
                     <img src="images/HRMS-admin-dashboadd1.png" alt="">
                     <div class="portfolio_item_content d-flex flex-column align-items-center justify-content-center">
                         <div class="portfolio_item_title">HRMS</div>
@@ -486,7 +508,7 @@
                     </div>
                 </div>
 
-                <div class="grid-item portfolio_item p_design">
+                <div class="grid-item portfolio_item p_design web">
                     <img src="images/HRMS-Job-Portal.png" alt="">
                     <div class="portfolio_item_content d-flex flex-column align-items-center justify-content-center">
                         <div class="portfolio_item_title">Job Portal</div>
@@ -503,10 +525,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="portfolio_grid grid clearfix">
-                <div class="grid-item portfolio_item p_design">
+                
+                <div class="grid-item portfolio_item p_design web">
                     <img src="images/SCHEDULING.jpg" alt="">
                     <div class="portfolio_item_content d-flex flex-column align-items-center justify-content-center">
                         <div class="portfolio_item_title">Email Schedule</div>
@@ -524,7 +544,7 @@
                     </div>
                 </div>
 
-                <div class="grid-item portfolio_item p_design" >
+                <div class="grid-item portfolio_item p_design web" >
                     <img src="images/MobilyLLC.png" alt="">
                     <div class="portfolio_item_content d-flex flex-column align-items-center justify-content-center">
                         <div class="portfolio_item_title">CallingTree II</div>
@@ -541,10 +561,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="portfolio_grid grid clearfix">
-                <div class="grid-item portfolio_item p_design">
+                
+                <div class="grid-item portfolio_item p_design web">
                     <img src="images/CallingTree.jpg" alt="">
                     <div class="portfolio_item_content d-flex flex-column align-items-center justify-content-center">
                         <div class="portfolio_item_title">CallingTree</div>
@@ -562,7 +580,7 @@
                     </div>
                 </div>
 
-                <div class="grid-item portfolio_item p_design">
+                <div class="grid-item portfolio_item p_design web">
                     <img src="images/EMS.jpg" alt="">
                     <div class="portfolio_item_content d-flex flex-column align-items-center justify-content-center">
                         <div class="portfolio_item_title">EMS</div>
@@ -579,10 +597,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="portfolio_grid grid clearfix"> 
-                <div class="grid-item portfolio_item p_design">
+                
+                <div class="grid-item portfolio_item p_design web">
                     <img src="images/PayRoll.jpg" alt="">
                     <div class="portfolio_item_content d-flex flex-column align-items-center justify-content-center">
                         <div class="portfolio_item_title">Pay Roll</div>
@@ -600,7 +616,7 @@
                     </div>
                 </div>
 
-                <div class="grid-item portfolio_item p_design">
+                <div class="grid-item portfolio_item p_design web">
                     <img src="images/OPAudit.jpg" alt="">
                     <div class="portfolio_item_content d-flex flex-column align-items-center justify-content-center">
                         <div class="portfolio_item_title">OP Audit</div>
@@ -617,10 +633,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="portfolio_grid grid clearfix">
-                <div class="grid-item portfolio_item p_design">
+                <div class="grid-item portfolio_item p_design web">
                     <img src="images/HRSCF.jpg" alt="">
                     <div class="portfolio_item_content d-flex flex-column align-items-center justify-content-center">
                         <div class="portfolio_item_title">HRSCF</div>
@@ -638,7 +652,7 @@
                     </div>
                 </div>
                 
-                <div class="grid-item portfolio_item p_design">
+                <div class="grid-item portfolio_item p_design app">
                     <img src="images/FAMEHRMS-Job-Portal-APP.jpeg" alt="">
                     <div class="portfolio_item_content d-flex flex-column align-items-center justify-content-center">
                         <div class="portfolio_item_title">Mobile APP-HRMS (Famehrm)</div>
@@ -891,6 +905,28 @@
       });
     });
   </script>
+
+  <script>
+    function filterProjects(type){
+        let items = document.querySelectorAll('.portfolio_item');
+        let buttons = document.querySelectorAll('.btn-filter');
+
+        buttons.forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+
+        items.forEach(item => {
+            if(type === 'all'){
+                item.style.display = 'block';
+            }
+            else if(item.classList.contains(type)){
+                item.style.display = 'block';
+            }
+            else{
+                item.style.display = 'none';
+            }
+        });
+    }
+    </script>
 </body>
 
 <!-- Mirrored from 192.168.18.209:8088/portfolio by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 02 Jan 2026 07:12:25 GMT -->
